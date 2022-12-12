@@ -1,0 +1,49 @@
+﻿<Page x:Class="CP22.PagesForms.Users"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CP22.PagesForms"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Users">
+
+    <Grid >
+        
+        <StackPanel Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Border Background="#FFC7C7C7">
+                <StackPanel Margin="10">
+             <Label Content="Форма: Пользователь" Margin="0,0,0,15"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Text="Фамилия" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                    <TextBlock Text="Имя" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                    <TextBlock Text="Отчество" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                    <TextBlock Text="Должность" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                    <TextBlock Text="Специальность" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                    <TextBlock Text="Роль" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                    <TextBlock Text="Логин" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                    <TextBlock Text="Пароль" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                </StackPanel>
+                <StackPanel Margin="10,0,0,0">
+                    <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
+                    <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
+                    <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
+                    <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
+                    <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
+                    <ComboBox Name="RoleBox" Width="125" Margin="0,0,0,5" Height="22"/>
+                    <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
+                    <PasswordBox Width="125" Margin="0,0,0,5" Height="22"/>
+                </StackPanel>
+                
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                <Button Content="Сохранить" Margin="0,0,80,0"/>
+                <Button Content="Отмена"/>
+            </StackPanel>
+            </StackPanel>
+            </Border>
+        </StackPanel>
+        
+    </Grid>
+</Page>
