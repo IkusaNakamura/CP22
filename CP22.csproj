@@ -119,6 +119,9 @@
     <Compile Include="PagesForms\CardsType.xaml.cs">
       <DependentUpon>CardsType.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PagesForms\Contacts.xaml.cs">
+      <DependentUpon>Contacts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PagesForms\MedCards.xaml.cs">
       <DependentUpon>MedCards.xaml</DependentUpon>
     </Compile>
@@ -193,6 +196,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PagesForms\CardsType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagesForms\Contacts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
