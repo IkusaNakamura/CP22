@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CP22.Windows"
         mc:Ignorable="d"
-        Title="MainMenu" Height="650" Width="1200" MinHeight="550" MinWidth="950">
+        Title="Main" Height="650" Width="1200" MinHeight="550" MinWidth="950">
     <Grid Background="#FFE1FDE6">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -45,6 +45,17 @@
             </StackPanel>
         </StackPanel>
         <Button Name="backNavigwteFrame" Content="Назад" Grid.Column="1" HorizontalAlignment="Right" Height="30" Width="50" Margin="20,0" Click="Click_NaviBackButton"/>
+        <Border>
+            <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Center">
+                <Border Background="Gray">
+                    <Image Width="40" Height="40"/>
+                </Border>
+                <StackPanel>
+                    <TextBlock Margin="5" Text=""/>
+                    <Button Content="Выйти"/>
+                </StackPanel>
+                 </StackPanel>
+        </Border>
         <Frame Name="frame" Grid.Row="1" Grid.Column="1" Background="White" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRender"></Frame>
     </Grid>
 </Window>

@@ -143,6 +143,9 @@
     <Compile Include="Pages\ViewCards.xaml.cs">
       <DependentUpon>ViewCards.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ViewContacts.xaml.cs">
+      <DependentUpon>ViewContacts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ViewPatientInfo.xaml.cs">
       <DependentUpon>ViewPatientInfo.xaml</DependentUpon>
     </Compile>
@@ -222,6 +225,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ViewCards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewContacts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

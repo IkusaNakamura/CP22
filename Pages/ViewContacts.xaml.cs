@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CP22.PagesForms
+namespace CP22.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Patients.xaml
+    /// Логика взаимодействия для ViewContacts.xaml
     /// </summary>
-    public partial class Patients : Page
+    public partial class ViewContacts : Page
     {
-        public Patients()
+        public ViewContacts()
         {
             InitializeComponent();
-        }
-
-        private void Click_contactEdit(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

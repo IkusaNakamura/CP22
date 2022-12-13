@@ -9,7 +9,7 @@
       Title="Patients">
 
     <Grid>
-        <Grid>
+      
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="10*"/>
@@ -27,6 +27,6 @@
             </Border>
             <CheckBox Name="veuiMod" Content="Режим таблицы/списка" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0" Visibility="Visible"/>
             <DataGrid Name="DGPatients" Grid.Row="1"/>
-        </Grid>
+      
     </Grid>
 </Page>

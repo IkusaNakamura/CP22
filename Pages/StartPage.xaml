@@ -9,9 +9,6 @@
       Title="StartPage">
 
     <Grid>
-        <Label Content="Это начало..." HorizontalAlignment="Left" Width="86" Height="36" VerticalAlignment="Top"/>
-
-        <Label Content="А это конец." HorizontalAlignment="Right" Width="72" Height="27" VerticalAlignment="Bottom"/>
-        <Label Content="А здесь хвост" Margin="714,414,0,0" HorizontalAlignment="Left" Width="86" Height="36" VerticalAlignment="Top"/>
+        
     </Grid>
 </Page>
