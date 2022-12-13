@@ -15,24 +15,14 @@
                     <Label Content="Форма: МедКарта" Margin="0,0,0,15"/>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>
-                            <TextBlock Text="Фамилия" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Имя" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Отчество" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Должность" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Специальность" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Роль" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Логин" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Пароль" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                            <TextBlock Text="Пациент" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                            <TextBlock Text="Тип карты" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                            <TextBlock Text="Учреждение" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
                         </StackPanel>
                         <StackPanel Margin="10,0,0,0">
-                            <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
-                            <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
-                            <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
-                            <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
-                            <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
-                            <ComboBox Name="RoleBox" Width="125" Margin="0,0,0,5" Height="22"/>
-                            <TextBox Width="125" Margin="0,0,0,5" Height="22"/>
-                            <PasswordBox Width="125" Margin="0,0,0,5" Height="22"/>
+                            <ComboBox Name="PatientBox" Width="125" Margin="0,0,0,5" Height="22"/>
+                            <ComboBox Name="CardBox" Width="125" Margin="0,0,0,5" Height="22"/>
+                            <ComboBox Name="InstBox" Width="125" Margin="0,0,0,5" Height="22"/>
                         </StackPanel>
 
                     </StackPanel>

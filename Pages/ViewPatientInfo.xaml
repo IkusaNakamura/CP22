@@ -1,0 +1,107 @@
+﻿<Page x:Class="CP22.Pages.ViewPatientInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CP22.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewPatientInfo">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200" Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="LightGray" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Grid.RowSpan="2">
+            <Border Background="Gray" Margin="10" HorizontalAlignment="Center">
+                <Image Height="100" Width="100"/>
+            </Border>
+            <StackPanel Margin="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="ФИО: " />
+                    <TextBlock Text="фамилия." Margin="5,0,0,0"/>
+                    <TextBlock Text="имя." Margin="5,0,0,0"/>
+                    <TextBlock Text="отчество." Margin="5,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Дата рождения: " />
+                    <TextBlock Text="ДД.ММ.ГГГГ." Margin="5,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Пол: " />
+                    <TextBlock Text="мужской/женский." Margin="5,0,0,0"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock  Text="Паспорт/аспорт родителя: " />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Серия " Margin="5,0,0,0"/>
+                        <TextBlock Text="5456" Margin="5,0,0,0"/>
+                        <TextBlock Text="№ " Margin="5,0,0,0"/>
+                        <TextBlock Text="523523 " Margin="5,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock  Text="Свидетельство о рождении: " />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Серия " Margin="5,0,0,0"/>
+                        <TextBlock Text="II-A" Margin="5,0,0,0"/>
+                        <TextBlock Text="№ " Margin="5,0,0,0"/>
+                        <TextBlock Text="523523" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Полис: №" />
+                    <TextBlock Text="0004505486862545" Margin="5,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Дата регистрации: " />
+                    <TextBlock Text="дата." Margin="5,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Действителен до: " />
+                    <TextBlock Text="дата." Margin="5,0,0,0"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Top">
+                    <TextBlock  Text="Организация страхования: " />
+                    <TextBlock Text="организация." Margin="5,0,0,0"/>
+                    <TextBlock Text="адрес." Margin="5,0,0,0"/>
+                    <TextBlock Text="Представитель: " Margin="5,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="фамилия." Margin="5,0,0,0"/>
+                        <TextBlock Text="имя." Margin="5,0,0,0"/>
+                        <TextBlock Text="отчество." Margin="5,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Top">
+                    <TextBlock  Text="Место рождения: " />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="адрес." Margin="5,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <Border Grid.Column="1" Background="#FFCBCBCB">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="20" Height="20"/>
+                    <TextBox Width="150" Name="searhBox"/>
+                </StackPanel>
+                <Button Name="addNote" Content="Создать запись" Margin="10,0,10,0" Visibility="Visible"/>
+                <Button Name="editMod" Content="Редактирование" Margin="0,0,10,0" Visibility="Visible"/>
+            </StackPanel>
+        </Border>
+        <CheckBox Grid.Column="1" Name="veuiMod" Content="Режим таблицы/списка" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0" Visibility="Visible"/>
+
+        <DataGrid Grid.Column="1" Grid.Row="1"></DataGrid>
+    </Grid>
+</Page>

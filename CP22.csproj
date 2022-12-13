@@ -122,6 +122,9 @@
     <Compile Include="PagesForms\MedCards.xaml.cs">
       <DependentUpon>MedCards.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PagesForms\NoteCard.xaml.cs">
+      <DependentUpon>NoteCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PagesForms\Patients.xaml.cs">
       <DependentUpon>Patients.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,9 @@
     </Compile>
     <Compile Include="Pages\ViewCards.xaml.cs">
       <DependentUpon>ViewCards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewPatientInfo.xaml.cs">
+      <DependentUpon>ViewPatientInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ViewRole.xaml.cs">
       <DependentUpon>ViewRole.xaml</DependentUpon>
@@ -191,6 +197,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PagesForms\NoteCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PagesForms\Patients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +222,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ViewCards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewPatientInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
