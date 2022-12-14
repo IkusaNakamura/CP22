@@ -16,35 +16,34 @@ using System.Windows.Shapes;
 namespace CP22.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ViewUsers.xaml
+    /// Логика взаимодействия для ViewPolisy.xaml
     /// </summary>
-    public partial class ViewUsers : Page
+    public partial class ViewPolisy : Page
     {
-        public ViewUsers()
+        public ViewPolisy()
         {
             InitializeComponent();
             try
             {
-                DGUsers.ItemsSource = PoliclinicaEntities.GetContext().Users.ToList();
+                DGUsers.ItemsSource = PoliclinicaEntities.GetContext().Policy.ToList();
             }
-            catch (Exception e) { MessageBox.Show(e.Message); 
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
             }
-           
         }
-
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
-            ManegerFrames.MainFrame.Navigate(new PagesForms.User(null));
+            ManegerFrames.MainFrame.Navigate(new PagesForms.PolicyOrg(null));
         }
         private void BtEdit_Click(object sender, RoutedEventArgs e)//Редактирование
         {
-            ManegerFrames.MainFrame.Navigate(new PagesForms.User((sender as Button).DataContext as Users));
+            ManegerFrames.MainFrame.Navigate(new PagesForms.PolicyOrg((sender as Button).DataContext as Policy));
         }
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e) //обновление страницы при возвращении
         {
             PoliclinicaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            DGUsers.ItemsSource = PoliclinicaEntities.GetContext().Users.ToList();
+            DGUsers.ItemsSource = PoliclinicaEntities.GetContext().Policy.ToList();
         }
-
     }
 }

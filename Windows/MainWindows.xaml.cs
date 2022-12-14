@@ -59,7 +59,22 @@ namespace CP22.Windows
 
         private void patients_Click(object sender, RoutedEventArgs e)
         {
-            //ManegerFrames.MainFrame.Navigate(new );
+            ManegerFrames.MainFrame.Navigate(new Pages.Patients());
+        }
+
+        private void roleViwe_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerFrames.MainFrame.Navigate(new Pages.ViewRole());
+        }
+
+        private void policyorg_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerFrames.MainFrame.Navigate(new Pages.ViewPolisy());
+        }
+
+        private void institutionViwe_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerFrames.MainFrame.Navigate(new Pages.ViewInstinut());
         }
     }
 }

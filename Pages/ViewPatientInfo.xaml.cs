@@ -20,9 +20,21 @@ namespace CP22.Pages
     /// </summary>
     public partial class ViewPatientInfo : Page
     {
-        public ViewPatientInfo()
+        private Patients _patients = new Patients();
+        public ViewPatientInfo(Patients selectPatient)
         {
             InitializeComponent();
+            DataContext = _patients;
+            try
+            {
+                
+            }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+        }
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e) //обновление страницы при возвращении
+        {
+            PoliclinicaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+          //  DGPatients.ItemsSource = PoliclinicaEntities.GetContext().Patients.ToList();
         }
     }
 }

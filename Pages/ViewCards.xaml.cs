@@ -23,7 +23,28 @@ namespace CP22.Pages
         public ViewCards()
         {
             InitializeComponent();
-            DGCards.ItemsSource = PoliclinicaEntities.GetContext().MedCards.ToList();
+            
+            try
+            {
+DGCards.ItemsSource = PoliclinicaEntities.GetContext().MedCards.ToList();
+            }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+        }
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e) //обновление страницы при возвращении
+        {
+            PoliclinicaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            DGCards.ItemsSource = PoliclinicaEntities.GetContext().Patients.ToList();
+        }
+
+        private void addCard_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerFrames.MainFrame.Navigate(new PagesForms.MedCard(null));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Patients select = new Patients();
+            ManegerFrames.MainFrame.Navigate(new Pages.ViewPatientInfo(select));
         }
     }
 }

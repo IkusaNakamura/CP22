@@ -21,21 +21,26 @@ namespace CP22
             this.MedCards = new HashSet<MedCards>();
         }
     
-        public int IDPolicy { get; set; }
+        public int ID { get; set; }
         public string FName { get; set; }
         public string SName { get; set; }
         public string LName { get; set; }
-        public Nullable<System.DateTime> BurthDay { get; set; }
+        public System.DateTime BurthDay { get; set; }
         public string Sex { get; set; }
         public string Passport { get; set; }
-        public Nullable<bool> ParentsPassport { get; set; }
+        public bool ParentsPassport { get; set; }
         public string BirthСertificateSeria { get; set; }
         public string BirthCertificateNum { get; set; }
+        public string BurthPlase { get; set; }
+        public System.DateTime ExpirationDate { get; set; }
+        public System.DateTime RegistrationDate { get; set; }
+        public string Policy { get; set; }
+        public int PolicyOrg { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contacts> Contacts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedCards> MedCards { get; set; }
-        public virtual Policy Policy { get; set; }
+        public virtual Policy Policy1 { get; set; }
     }
 }

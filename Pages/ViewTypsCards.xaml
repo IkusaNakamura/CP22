@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CP22.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ViewTypsCards">
+      Title="ViewTypsCards" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         
@@ -16,17 +16,26 @@
             </Grid.RowDefinitions>
             <Border Background="#FFCBCBCB">
                 <StackPanel Orientation="Horizontal" Margin="10">
-                    <Button Content="Смотреть записи" Margin="0,0,10,0"/>
-                    <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
                         <Button Width="20" Height="20"/>
                         <TextBox Width="150" Name="searhBox"/>
                     </StackPanel>
-                    <Button Name="addCard" Content="Создать карту" Margin="10,0,10,0" Visibility="Visible"/>
+                    <Button Name="addCardType" Content="Создать тип карт" Margin="10,0,10,0" Visibility="Visible" Click="addCardType_Click"/>
                     <Button Name="editMod" Content="Редактирование" Margin="0,0,10,0" Visibility="Visible"/>
                 </StackPanel>
             </Border>
             <CheckBox Name="veuiMod" Content="Режим таблицы/списка" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0" Visibility="Visible"/>
-            <DataGrid Name="DGTypsCards" Grid.Row="1"/>
-        
+        <DataGrid Name="DGTypsCards" Grid.Row="1" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Name="BtEdit" Click="BtEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Page>

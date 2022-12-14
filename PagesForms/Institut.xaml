@@ -1,4 +1,4 @@
-﻿<Page x:Class="CP22.PagesForms.MedCard"
+﻿<Page x:Class="CP22.PagesForms.Institut"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,23 +6,21 @@
       xmlns:local="clr-namespace:CP22.PagesForms"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MedCards">
+      Title="Institut">
 
     <Grid>
         <StackPanel Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Border Background="#FFC7C7C7">
                 <StackPanel Margin="10">
-                    <Label Content="Форма: МедКарта" Margin="0,0,0,15"/>
+                    <Label Content="Форма: Учреждения" Margin="0,0,0,15"/>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>
-                            <TextBlock Text="Пациент" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Тип карты" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
-                            <TextBlock Text="Учреждение" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                            <TextBlock Text="Название" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
+                            <TextBlock Text="Адрес" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
                         </StackPanel>
                         <StackPanel Margin="10,0,0,0">
-                            <ComboBox Name="PatientBox" Width="125" Margin="0,0,0,5" Height="22"/>
-                            <ComboBox Name="CardBox" Width="125" Margin="0,0,0,5" Height="22"/>
-                            <ComboBox Name="InstBox" Width="125" Margin="0,0,0,5" Height="22"/>
+                            <TextBox Width="125" Margin="0,0,0,5" Height="22" Text="{Binding Name}"/>
+                            <TextBox Width="125" Margin="0,0,0,5" Height="22" Text="{Binding Adres}"/>
                         </StackPanel>
 
                     </StackPanel>

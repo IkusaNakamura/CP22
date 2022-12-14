@@ -16,31 +16,36 @@ using System.Windows.Shapes;
 namespace CP22.PagesForms
 {
     /// <summary>
-    /// Логика взаимодействия для CardsType.xaml
+    /// Логика взаимодействия для PolicyOrg.xaml
     /// </summary>
-    public partial class CardsType : Page
+    public partial class PolicyOrg : Page
     {
-        private CardTyps _cardtyps = new CardTyps();
-        public CardsType(CardTyps selectType)
+        private Policy _policy = new Policy();
+        public PolicyOrg(Policy selectPolicy)
         {
             InitializeComponent();
-            if (selectType != null)
-                _cardtyps = selectType;
-            DataContext = _cardtyps;
+            if (selectPolicy != null)
+                _policy = selectPolicy;
+            DataContext = _policy;
         }
         private void SeveBtClick(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            if (string.IsNullOrWhiteSpace(_cardtyps.Name))
+            if (string.IsNullOrWhiteSpace(_policy.InsuranceOrganization))
+                errors.AppendLine("Пустое название");
+            if (string.IsNullOrWhiteSpace(_policy.Adres))
+                errors.AppendLine("Нет адреса");
+            if (string.IsNullOrWhiteSpace(_policy.RepresentativeFN))
                 errors.AppendLine("Пустое имя");
+            if (string.IsNullOrWhiteSpace(_policy.RepresentativeLN))
+                errors.AppendLine("Пустая фамилия");
             
-
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
-            if (_cardtyps.ID == 0) PoliclinicaEntities.GetContext().CardTyps.Add(_cardtyps);
+            if (_policy.ID == 0) PoliclinicaEntities.GetContext().Policy.Add(_policy);
             try
             {
                 PoliclinicaEntities.GetContext().SaveChanges();
@@ -51,7 +56,5 @@ namespace CP22.PagesForms
                 MessageBox.Show(ex.Message);
             }
         }
-
-   
     }
 }

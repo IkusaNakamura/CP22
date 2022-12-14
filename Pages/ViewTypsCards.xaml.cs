@@ -23,7 +23,32 @@ namespace CP22.Pages
         public ViewTypsCards()
         {
             InitializeComponent();
+            
+            try
+            {
+                DGTypsCards.ItemsSource = PoliclinicaEntities.GetContext().CardTyps.ToList();
+            }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+        }
+        
+        private void BtEdit_Click(object sender, RoutedEventArgs e)//Редактирование
+        {
+            ManegerFrames.MainFrame.Navigate(new PagesForms.CardsType((sender as Button).DataContext as CardTyps));
+        }
+
+
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e) //обновление страницы при возвращении
+        {
+            PoliclinicaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             DGTypsCards.ItemsSource = PoliclinicaEntities.GetContext().CardTyps.ToList();
         }
+
+        private void addCardType_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerFrames.MainFrame.Navigate(new PagesForms.CardsType(null));
+        }
+
+       
     }
 }

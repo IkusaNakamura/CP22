@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="10c9858df7b04a91beded7fc743c6c50" Name="Diagram1">
+      <Diagram DiagramId="becf17cf9ed94d189d050b0f5c9f800f" Name="Diagram1">
         <EntityTypeShape EntityType="PoliclinicaModel.CardTyps" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliclinicaModel.Contacts" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliclinicaModel.FeatureSheet" Width="1.5" PointX="10.5" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliclinicaModel.Institution" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliclinicaModel.MedCards" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliclinicaModel.MedicalHistory" Width="1.5" PointX="13.5" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PoliclinicaModel.Patients" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PoliclinicaModel.Policy" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PoliclinicaModel.Patients" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PoliclinicaModel.Policy" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliclinicaModel.Role" Width="1.5" PointX="6" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PoliclinicaModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PoliclinicaModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliclinicaModel.Users" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
         <AssociationConnector Association="PoliclinicaModel.FK_MedCards_CardTyps" ManuallyRouted="false" />
         <AssociationConnector Association="PoliclinicaModel.FK_Contacts_Patients" ManuallyRouted="false" />

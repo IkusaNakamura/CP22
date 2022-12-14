@@ -28,10 +28,11 @@
                             <Border Background="White" >
                                 <StackPanel>
                                     <StackPanel>
-                                        <Button x:Name="startpage" Content="Стартовая страница" Height="30" Click="startpage_Click"/>
+                                        <Button x:Name="startpage" Content="Стартовая страница" Height="30" Click="startpage_Click" />
                                         <Button x:Name="usersViwe" Content="Список пользователей" Height="30" Click="Click_MainToInUsers"/>
                                         <Button x:Name="typscardViwe" Content="Типы карт" Height="30" Click="typscardViwe_Click"/>
-                                        <Button x:Name="institutionViwe" Content="Учреждения" Height="30"/>
+                                        <Button x:Name="institutionViwe" Content="Учреждения" Height="30" Click="institutionViwe_Click"/>
+                                        <Button x:Name="roleViwe" Content="Роли" Height="30" Click="roleViwe_Click"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
@@ -39,7 +40,8 @@
 
                         <Button Name="patientsCards" Content="Карты пациентов" Height="30" Click="Click_MainToInViewCards"/>
                         <Button Name="patients" Content="Список пациентов" Height="30" Click="patients_Click"/>
-                        <Button Name="chatybt" Content="Чат" Height="30" IsEnabled="False"/>
+                        <Button Name="policyorg" Content="Страховые организации" Height="30" Click="policyorg_Click" />
+                        
                     </StackPanel>
                 </Border>
             </StackPanel>

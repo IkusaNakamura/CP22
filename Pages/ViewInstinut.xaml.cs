@@ -16,35 +16,33 @@ using System.Windows.Shapes;
 namespace CP22.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ViewRole.xaml
+    /// Логика взаимодействия для ViewInstinut.xaml
     /// </summary>
-    public partial class ViewRole : Page
+    public partial class ViewInstinut : Page
     {
-        public ViewRole()
+        public ViewInstinut()
         {
             InitializeComponent();
-            
             try
             {
-                DGRole.ItemsSource = PoliclinicaEntities.GetContext().Role.ToList();
+                DGRole.ItemsSource = PoliclinicaEntities.GetContext().Institution.ToList();
             }
             catch (Exception e) { MessageBox.Show(e.Message); }
         }
-
         private void addRole_Click(object sender, RoutedEventArgs e)//чистый возврат
         {
-            ManegerFrames.MainFrame.Navigate(new PagesForms.Roles(null));
+            ManegerFrames.MainFrame.Navigate(new PagesForms.Institut(null));
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e) //обновление страницы при возвращении
         {
             PoliclinicaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            DGRole.ItemsSource = PoliclinicaEntities.GetContext().Role.ToList();
+            DGRole.ItemsSource = PoliclinicaEntities.GetContext().Institution.ToList();
         }
 
         private void BtEdit_Click(object sender, RoutedEventArgs e)//Редактирование
         {
-            ManegerFrames.MainFrame.Navigate(new PagesForms.Roles((sender as Button).DataContext as Role));
+            ManegerFrames.MainFrame.Navigate(new PagesForms.Institut((sender as Button).DataContext as Institution));
         }
     }
 }

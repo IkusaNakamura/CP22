@@ -14,16 +14,20 @@ namespace CP22
     
     public partial class Policy
     {
-        public int IDNumber { get; set; }
-        public string BurthPlase { get; set; }
-        public System.DateTime ExpirationDate { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Policy()
+        {
+            this.Patients = new HashSet<Patients>();
+        }
+    
+        public int ID { get; set; }
         public string InsuranceOrganization { get; set; }
-        public System.DateTime RegistrationDate { get; set; }
         public string RepresentativeFN { get; set; }
         public string RepresentativeSN { get; set; }
         public string RepresentativeLN { get; set; }
         public string Adres { get; set; }
     
-        public virtual Patients Patients { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Patients> Patients { get; set; }
     }
 }

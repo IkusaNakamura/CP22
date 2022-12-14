@@ -22,7 +22,6 @@ namespace CP22
             : base("name=PoliclinicaEntities")
         {
         }
-    
         public static PoliclinicaEntities GetContext()
         {
             if (_context == null) _context = new PoliclinicaEntities();

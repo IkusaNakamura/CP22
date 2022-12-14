@@ -83,44 +83,32 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CardTyps.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="Class\ManegerFrames.cs" />
     <Compile Include="Contacts.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBpoliclinic.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBpoliclinic.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBpoliclinic.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBpoliclinic.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBpoliclinic.edmx</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="FeatureSheet.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="Institution.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="MedCards.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="MedicalHistory.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="PagesForms\CardsType.xaml.cs">
       <DependentUpon>CardsType.xaml</DependentUpon>
     </Compile>
     <Compile Include="PagesForms\Contacts.xaml.cs">
       <DependentUpon>Contacts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PagesForms\Institut.xaml.cs">
+      <DependentUpon>Institut.xaml</DependentUpon>
     </Compile>
     <Compile Include="PagesForms\MedCards.xaml.cs">
       <DependentUpon>MedCards.xaml</DependentUpon>
@@ -130,6 +118,9 @@
     </Compile>
     <Compile Include="PagesForms\Patients.xaml.cs">
       <DependentUpon>Patients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PagesForms\PolicyOrg.xaml.cs">
+      <DependentUpon>PolicyOrg.xaml</DependentUpon>
     </Compile>
     <Compile Include="PagesForms\Roles.xaml.cs">
       <DependentUpon>Roles.xaml</DependentUpon>
@@ -149,8 +140,14 @@
     <Compile Include="Pages\ViewContacts.xaml.cs">
       <DependentUpon>ViewContacts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ViewInstinut.xaml.cs">
+      <DependentUpon>ViewInstinut.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ViewPatientInfo.xaml.cs">
       <DependentUpon>ViewPatientInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewPolisy.xaml.cs">
+      <DependentUpon>ViewPolisy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ViewRole.xaml.cs">
       <DependentUpon>ViewRole.xaml</DependentUpon>
@@ -162,25 +159,40 @@
       <DependentUpon>ViewUsers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Patients.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Policlinica.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Policlinica.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Policlinica.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Policlinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Policlinica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Policlinica.edmx</DependentUpon>
     </Compile>
     <Compile Include="Policy.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>DBpoliclinic.tt</DependentUpon>
+      <DependentUpon>Policlinica.tt</DependentUpon>
     </Compile>
     <Compile Include="Windows\Autorisation.xaml.cs">
       <DependentUpon>Autorisation.xaml</DependentUpon>
@@ -203,6 +215,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PagesForms\Institut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PagesForms\MedCards.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PagesForms\Patients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagesForms\PolicyOrg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,7 +259,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ViewInstinut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ViewPatientInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewPolisy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -286,14 +314,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DBpoliclinic.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBpoliclinic.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DBpoliclinic.edmx.diagram">
-      <DependentUpon>DBpoliclinic.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="Policlinica.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Policlinica.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Policlinica.edmx.diagram">
+      <DependentUpon>Policlinica.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -301,18 +329,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DBpoliclinic.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBpoliclinic.Context.cs</LastGenOutput>
-      <DependentUpon>DBpoliclinic.edmx</DependentUpon>
-    </Content>
-    <Content Include="DBpoliclinic.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBpoliclinic.edmx</DependentUpon>
-      <LastGenOutput>DBpoliclinic.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -328,6 +344,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Policlinica.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Policlinica.edmx</DependentUpon>
+      <LastGenOutput>Policlinica.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Policlinica.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Policlinica.edmx</DependentUpon>
+      <LastGenOutput>Policlinica.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

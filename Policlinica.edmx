@@ -63,28 +63,30 @@
         </EntityType>
         <EntityType Name="Patients">
           <Key>
-            <PropertyRef Name="IDPolicy" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="IDPolicy" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SName" Type="nvarchar" MaxLength="50" />
           <Property Name="LName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="BurthDay" Type="date" />
-          <Property Name="Sex" Type="nvarchar" MaxLength="50" />
-          <Property Name="Passport" Type="nvarchar" MaxLength="10" />
-          <Property Name="ParentsPassport" Type="bit" />
-          <Property Name="BirthСertificateSeria" Type="nvarchar" MaxLength="6" />
-          <Property Name="BirthCertificateNum" Type="nvarchar" MaxLength="6" />
+          <Property Name="BurthDay" Type="date" Nullable="false" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Passport" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ParentsPassport" Type="bit" Nullable="false" />
+          <Property Name="BirthСertificateSeria" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="BirthCertificateNum" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="BurthPlase" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ExpirationDate" Type="date" Nullable="false" />
+          <Property Name="RegistrationDate" Type="date" Nullable="false" />
+          <Property Name="Policy" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="PolicyOrg" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Policy">
           <Key>
-            <PropertyRef Name="IDNumber" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="IDNumber" Type="int" Nullable="false" />
-          <Property Name="BurthPlase" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="ExpirationDate" Type="date" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InsuranceOrganization" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="RegistrationDate" Type="date" Nullable="false" />
           <Property Name="RepresentativeFN" Type="nvarchar" MaxLength="50" />
           <Property Name="RepresentativeSN" Type="nvarchar" MaxLength="50" />
           <Property Name="RepresentativeLN" Type="nvarchar" MaxLength="50" />
@@ -130,7 +132,7 @@
           <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Patients">
-              <PropertyRef Name="IDPolicy" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Contacts">
               <PropertyRef Name="Patient" />
@@ -190,7 +192,7 @@
           <End Role="MedCards" Type="Self.MedCards" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Patients">
-              <PropertyRef Name="IDPolicy" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="MedCards">
               <PropertyRef Name="Patient" />
@@ -223,13 +225,13 @@
         </Association>
         <Association Name="FK_Patients_Policy">
           <End Role="Policy" Type="Self.Policy" Multiplicity="1" />
-          <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Policy">
-              <PropertyRef Name="IDNumber" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Patients">
-              <PropertyRef Name="IDPolicy" />
+              <PropertyRef Name="PolicyOrg" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -404,31 +406,33 @@
         </EntityType>
         <EntityType Name="Patients">
           <Key>
-            <PropertyRef Name="IDPolicy" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="IDPolicy" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="BurthDay" Type="DateTime" Precision="0" />
-          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Passport" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="ParentsPassport" Type="Boolean" />
-          <Property Name="BirthСertificateSeria" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="BirthCertificateNum" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="BurthDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Passport" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ParentsPassport" Type="Boolean" Nullable="false" />
+          <Property Name="BirthСertificateSeria" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BirthCertificateNum" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BurthPlase" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Policy" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PolicyOrg" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Contacts" Relationship="Self.FK_Contacts_Patients" FromRole="Patients" ToRole="Contacts" />
           <NavigationProperty Name="MedCards" Relationship="Self.FK_MedCards_Patients" FromRole="Patients" ToRole="MedCards" />
-          <NavigationProperty Name="Policy" Relationship="Self.FK_Patients_Policy" FromRole="Patients" ToRole="Policy" />
+          <NavigationProperty Name="Policy1" Relationship="Self.FK_Patients_Policy" FromRole="Patients" ToRole="Policy" />
         </EntityType>
         <EntityType Name="Policy">
           <Key>
-            <PropertyRef Name="IDNumber" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="IDNumber" Type="Int32" Nullable="false" />
-          <Property Name="BurthPlase" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="InsuranceOrganization" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="RepresentativeFN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RepresentativeSN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RepresentativeLN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -491,7 +495,7 @@
           <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Patients">
-              <PropertyRef Name="IDPolicy" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Contacts">
               <PropertyRef Name="Patient" />
@@ -539,7 +543,7 @@
           <End Role="MedCards" Type="Self.MedCards" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Patients">
-              <PropertyRef Name="IDPolicy" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="MedCards">
               <PropertyRef Name="Patient" />
@@ -572,13 +576,13 @@
         </Association>
         <Association Name="FK_Patients_Policy">
           <End Role="Policy" Type="Self.Policy" Multiplicity="1" />
-          <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Policy">
-              <PropertyRef Name="IDNumber" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Patients">
-              <PropertyRef Name="IDPolicy" />
+              <PropertyRef Name="PolicyOrg" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -759,7 +763,7 @@
           <EntitySetMapping Name="Patients">
             <EntityTypeMapping TypeName="PoliclinicaModel.Patients">
               <MappingFragment StoreEntitySet="Patients">
-                <ScalarProperty Name="IDPolicy" ColumnName="IDPolicy" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FName" ColumnName="FName" />
                 <ScalarProperty Name="SName" ColumnName="SName" />
                 <ScalarProperty Name="LName" ColumnName="LName" />
@@ -769,17 +773,19 @@
                 <ScalarProperty Name="ParentsPassport" ColumnName="ParentsPassport" />
                 <ScalarProperty Name="BirthСertificateSeria" ColumnName="BirthСertificateSeria" />
                 <ScalarProperty Name="BirthCertificateNum" ColumnName="BirthCertificateNum" />
+                <ScalarProperty Name="BurthPlase" ColumnName="BurthPlase" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="Policy" ColumnName="Policy" />
+                <ScalarProperty Name="PolicyOrg" ColumnName="PolicyOrg" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Policy">
             <EntityTypeMapping TypeName="PoliclinicaModel.Policy">
               <MappingFragment StoreEntitySet="Policy">
-                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
-                <ScalarProperty Name="BurthPlase" ColumnName="BurthPlase" />
-                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="InsuranceOrganization" ColumnName="InsuranceOrganization" />
-                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
                 <ScalarProperty Name="RepresentativeFN" ColumnName="RepresentativeFN" />
                 <ScalarProperty Name="RepresentativeSN" ColumnName="RepresentativeSN" />
                 <ScalarProperty Name="RepresentativeLN" ColumnName="RepresentativeLN" />

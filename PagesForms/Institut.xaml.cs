@@ -16,31 +16,31 @@ using System.Windows.Shapes;
 namespace CP22.PagesForms
 {
     /// <summary>
-    /// Логика взаимодействия для CardsType.xaml
+    /// Логика взаимодействия для Institut.xaml
     /// </summary>
-    public partial class CardsType : Page
+    public partial class Institut : Page
     {
-        private CardTyps _cardtyps = new CardTyps();
-        public CardsType(CardTyps selectType)
+        private Institution _Institut = new Institution();
+        public Institut(Institution selectInst)
         {
             InitializeComponent();
-            if (selectType != null)
-                _cardtyps = selectType;
-            DataContext = _cardtyps;
+            if (selectInst != null) _Institut = selectInst;
+            DataContext = _Institut;
         }
         private void SeveBtClick(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            if (string.IsNullOrWhiteSpace(_cardtyps.Name))
-                errors.AppendLine("Пустое имя");
-            
+            if (string.IsNullOrWhiteSpace(_Institut.Name))
+                errors.AppendLine("Нет названия");
+            if (string.IsNullOrWhiteSpace(_Institut.Adres))
+                errors.AppendLine("Нет адреса");
 
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
-            if (_cardtyps.ID == 0) PoliclinicaEntities.GetContext().CardTyps.Add(_cardtyps);
+            if (_Institut.Uid == 0) PoliclinicaEntities.GetContext().Institution.Add(_Institut);
             try
             {
                 PoliclinicaEntities.GetContext().SaveChanges();
@@ -51,7 +51,5 @@ namespace CP22.PagesForms
                 MessageBox.Show(ex.Message);
             }
         }
-
-   
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CP22.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ViewPatientInfo">
+      Title="ViewPatientInfo" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -25,23 +25,24 @@
             <StackPanel Margin="5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="ФИО: " />
-                    <TextBlock Text="фамилия." Margin="5,0,0,0"/>
-                    <TextBlock Text="имя." Margin="5,0,0,0"/>
-                    <TextBlock Text="отчество." Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding LName}" Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding FName}" Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding SName}" Margin="5,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Дата рождения: " />
-                    <TextBlock Text="ДД.ММ.ГГГГ." Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding BurthDay}" Margin="5,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Пол: " />
-                    <TextBlock Text="мужской/женский." Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding Sex}" Margin="5,0,0,0"/>
                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <TextBlock  Text="Паспорт/аспорт родителя: " />
-                    <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Паспорт: " />
+                    <TextBlock Text="{Binding Passport}"/>
+                    <StackPanel Orientation="Horizontal" Visibility="Collapsed">
                         <TextBlock Text="Серия " Margin="5,0,0,0"/>
-                        <TextBlock Text="5456" Margin="5,0,0,0"/>
+                        <TextBlock Text="" Margin="5,0,0,0"/>
                         <TextBlock Text="№ " Margin="5,0,0,0"/>
                         <TextBlock Text="523523 " Margin="5,0,0,0"/>
                     </StackPanel>
@@ -50,40 +51,40 @@
                     <TextBlock  Text="Свидетельство о рождении: " />
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Серия " Margin="5,0,0,0"/>
-                        <TextBlock Text="II-A" Margin="5,0,0,0"/>
+                        <TextBlock Text="{Binding BirthСertificateSeria}" Margin="5,0,0,0"/>
                         <TextBlock Text="№ " Margin="5,0,0,0"/>
-                        <TextBlock Text="523523" Margin="5,0,0,0"/>
+                        <TextBlock Text="{Binding BirthCertificateNum}" Margin="5,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Полис: №" />
-                    <TextBlock Text="0004505486862545" Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding Policy}" Margin="5,0,0,0"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Дата регистрации: " />
-                    <TextBlock Text="дата." Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding RegistrationDate}" Margin="5,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Действителен до: " />
-                    <TextBlock Text="дата." Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding ExpirationDate}" Margin="5,0,0,0"/>
                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Top">
                     <TextBlock  Text="Организация страхования: " />
-                    <TextBlock Text="организация." Margin="5,0,0,0"/>
-                    <TextBlock Text="адрес." Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding InsuranceOrganization}" Margin="5,0,0,0"/>
+                    <TextBlock Text="{Binding Adres}" Margin="5,0,0,0"/>
                     <TextBlock Text="Представитель: " Margin="5,0,0,0"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="фамилия." Margin="5,0,0,0"/>
-                        <TextBlock Text="имя." Margin="5,0,0,0"/>
-                        <TextBlock Text="отчество." Margin="5,0,0,0"/>
+                        <TextBlock Text="{Binding RepresentativeLN}" Margin="5,0,0,0"/>
+                        <TextBlock Text="{Binding RepresentativeFN}" Margin="5,0,0,0"/>
+                        <TextBlock Text="{Binding RepresentativeSN}" Margin="5,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Top">
                     <TextBlock  Text="Место рождения: " />
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="адрес." Margin="5,0,0,0"/>
+                        <TextBlock Text="{Binding BurthPlase}" Margin="5,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
@@ -102,6 +103,16 @@
         </Border>
         <CheckBox Grid.Column="1" Name="veuiMod" Content="Режим таблицы/списка" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0" Visibility="Visible"/>
 
-        <DataGrid Grid.Column="1" Grid.Row="1"></DataGrid>
+        <DataGrid Grid.Column="1" Grid.Row="1" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Name="BtEdit"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

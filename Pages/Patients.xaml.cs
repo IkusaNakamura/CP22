@@ -23,7 +23,42 @@ namespace CP22.Pages
         public Patients()
         {
             InitializeComponent();
+            
+            try
+            {
+                DGPatients.ItemsSource = PoliclinicaEntities.GetContext().Patients.ToList();
+            }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+        }
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e) //обновление страницы при возвращении
+        {
+            PoliclinicaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             DGPatients.ItemsSource = PoliclinicaEntities.GetContext().Patients.ToList();
         }
+
+        private void addPatient_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerFrames.MainFrame.Navigate(new PagesForms.Patient(null));
+        }
+        private void BtEdit_Click(object sender, RoutedEventArgs e)//Редактирование
+        {
+            ManegerFrames.MainFrame.Navigate(new PagesForms.User((sender as Button).DataContext as Users));
+        }
+
+        ///код для базы данных
+
+        //private static PoliclinicaEntities _context;
+        //public PoliclinicaEntities()
+        //    : base("name=PoliclinicaEntities")
+        //{
+        //}
+
+        //public static PoliclinicaEntities GetContext()
+        //{
+        //    if (_context == null) _context = new PoliclinicaEntities();
+        //    return _context;
+        //}
+
+
     }
 }
