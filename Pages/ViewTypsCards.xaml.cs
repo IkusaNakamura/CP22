@@ -49,6 +49,23 @@ namespace CP22.Pages
             ManegerFrames.MainFrame.Navigate(new PagesForms.CardsType(null));
         }
 
-       
+        private void delbt_Click(object sender, RoutedEventArgs e)
+        {
+            var typsTiRemoving = DGTypsCards.SelectedItems.Cast<CardTyps>().ToList();
+            if (MessageBox.Show($"Следующие {typsTiRemoving.Count()} объекты будут безвозвратно удалены.\nПродолжить?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    PoliclinicaEntities.GetContext().CardTyps.RemoveRange(typsTiRemoving);
+                    PoliclinicaEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удалено успешно");
+                    DGTypsCards.ItemsSource = PoliclinicaEntities.GetContext().CardTyps.ToList();
+                }
+                catch (Exception eeee)
+                {
+                    MessageBox.Show(eeee.Message);
+                }
+            }
+        }
     }
 }

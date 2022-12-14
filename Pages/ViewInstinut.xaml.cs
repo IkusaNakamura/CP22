@@ -44,5 +44,23 @@ namespace CP22.Pages
         {
             ManegerFrames.MainFrame.Navigate(new PagesForms.Institut((sender as Button).DataContext as Institution));
         }
+        private void delbt_Click(object sender, RoutedEventArgs e)
+        {
+            var instTiRemoving = DGRole.SelectedItems.Cast<Institution>().ToList();
+            if (MessageBox.Show($"Следующие {instTiRemoving.Count()} объекты будут безвозвратно удалены.\nПродолжить?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    PoliclinicaEntities.GetContext().Institution.RemoveRange(instTiRemoving);
+                    PoliclinicaEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удалено успешно");
+                    DGRole.ItemsSource = PoliclinicaEntities.GetContext().Institution.ToList();
+                }
+                catch (Exception eeee)
+                {
+                    MessageBox.Show(eeee.Message);
+                }
+            }
+        }
     }
 }

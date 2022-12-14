@@ -45,5 +45,24 @@ namespace CP22.Pages
             PoliclinicaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             DGUsers.ItemsSource = PoliclinicaEntities.GetContext().Policy.ToList();
         }
+
+        private void delbt_Click(object sender, RoutedEventArgs e)
+        {
+            var policTiRemoving = DGUsers.SelectedItems.Cast<Policy>().ToList();
+            if (MessageBox.Show($"Следующие {policTiRemoving.Count()} объекты будут безвозвратно удалены.\nПродолжить?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    PoliclinicaEntities.GetContext().Policy.RemoveRange(policTiRemoving);
+                    PoliclinicaEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удалено успешно");
+                    DGUsers.ItemsSource = PoliclinicaEntities.GetContext().Policy.ToList();
+                }
+                catch (Exception eeee)
+                {
+                    MessageBox.Show(eeee.Message);
+                }
+            }
+        }
     }
 }

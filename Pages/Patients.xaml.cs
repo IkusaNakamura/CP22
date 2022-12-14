@@ -45,6 +45,25 @@ namespace CP22.Pages
             ManegerFrames.MainFrame.Navigate(new PagesForms.User((sender as Button).DataContext as Users));
         }
 
+
+        private void delbt_Click(object sender, RoutedEventArgs e)
+        {
+            var patientsTiRemoving = DGPatients.SelectedItems.Cast<Patients>().ToList();
+            if (MessageBox.Show($"Следующие {patientsTiRemoving.Count()} объекты будут безвозвратно удалены.\nПродолжить?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    PoliclinicaEntities.GetContext().Patients.RemoveRange((IEnumerable<CP22.Patients>)patientsTiRemoving);
+                    PoliclinicaEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удалено успешно");
+                    DGPatients.ItemsSource = PoliclinicaEntities.GetContext().Patients.ToList();
+                }
+                catch (Exception eeee)
+                {
+                    MessageBox.Show(eeee.Message);
+                }
+            }
+        }
         ///код для базы данных
 
         //private static PoliclinicaEntities _context;

@@ -24,6 +24,7 @@ namespace CP22.Pages
         public ViewPatientInfo(Patients selectPatient)
         {
             InitializeComponent();
+            if (selectPatient != null) _patients = selectPatient;
             DataContext = _patients;
             try
             {

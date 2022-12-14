@@ -21,7 +21,7 @@
                         <TextBox Width="150" Name="searhBox"/>
                     </StackPanel>
                     <Button Name="addCardType" Content="Создать тип карт" Margin="10,0,10,0" Visibility="Visible" Click="addCardType_Click"/>
-                    <Button Name="editMod" Content="Редактирование" Margin="0,0,10,0" Visibility="Visible"/>
+                    <Button Name="delbt" Content="Удалить" Margin="0,0,10,0" Visibility="Visible" Click="delbt_Click"/>
                 </StackPanel>
             </Border>
             <CheckBox Name="veuiMod" Content="Режим таблицы/списка" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0" Visibility="Visible"/>

@@ -46,5 +46,24 @@ namespace CP22.Pages
         {
             ManegerFrames.MainFrame.Navigate(new PagesForms.Roles((sender as Button).DataContext as Role));
         }
+
+        private void delbt_Click(object sender, RoutedEventArgs e)
+        {
+            var roleTiRemoving = DGRole.SelectedItems.Cast<Role>().ToList();
+            if (MessageBox.Show($"Следующие {roleTiRemoving.Count()} объекты будут безвозвратно удалены.\nПродолжить?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    PoliclinicaEntities.GetContext().Role.RemoveRange(roleTiRemoving);
+                    PoliclinicaEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удалено успешно");
+                    DGRole.ItemsSource = PoliclinicaEntities.GetContext().Role.ToList();
+                }
+                catch (Exception eeee)
+                {
+                    MessageBox.Show(eeee.Message);
+                }
+            }
+        }
     }
 }

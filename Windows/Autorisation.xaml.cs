@@ -23,5 +23,21 @@ namespace CP22.Windows
         {
             InitializeComponent();
         }
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            var checkBox = sender as CheckBox;
+            if (checkBox.IsChecked.Value)
+            {
+                pwdTextBox.Text = pwdPasswordBox.Password; // скопируем в TextBox из PasswordBox
+                pwdTextBox.Visibility = Visibility.Visible; // TextBox - отобразить
+                pwdPasswordBox.Visibility = Visibility.Collapsed; // PasswordBox - скрыть
+            }
+            else
+            {
+                pwdPasswordBox.Password = pwdTextBox.Text; // скопируем в PasswordBox из TextBox 
+                pwdTextBox.Visibility = Visibility.Collapsed; // TextBox - скрыть
+                pwdPasswordBox.Visibility = Visibility.Visible; // PasswordBox - отобразить
+            }
+        }
     }
 }

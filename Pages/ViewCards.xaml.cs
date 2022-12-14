@@ -43,8 +43,27 @@ DGCards.ItemsSource = PoliclinicaEntities.GetContext().MedCards.ToList();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Patients select = new Patients();
-            ManegerFrames.MainFrame.Navigate(new Pages.ViewPatientInfo(select));
+            
+            ManegerFrames.MainFrame.Navigate(new Pages.ViewPatientInfo((sender as Button).DataContext as Patients));
+        }
+
+        private void delbt_Click(object sender, RoutedEventArgs e)
+        {
+            var cardsTiRemoving = DGCards.SelectedItems.Cast<MedCards>().ToList();
+            if (MessageBox.Show($"Следующие {cardsTiRemoving.Count()} объекты будут безвозвратно удалены.\nПродолжить?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    PoliclinicaEntities.GetContext().MedCards.RemoveRange(cardsTiRemoving);
+                    PoliclinicaEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удалено успешно");
+                    DGCards.ItemsSource = PoliclinicaEntities.GetContext().MedCards.ToList();
+                }
+                catch (Exception eeee)
+                {
+                    MessageBox.Show(eeee.Message);
+                }
+            }
         }
     }
 }
