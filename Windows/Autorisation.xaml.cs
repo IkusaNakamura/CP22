@@ -19,9 +19,11 @@ namespace CP22.Windows
     /// </summary>
     public partial class Autorisation : Window
     {
+        bool isLogin = false;
         public Autorisation()
         {
             InitializeComponent();
+            
         }
         private void CheckBox_Click(object sender, RoutedEventArgs e)
         {
@@ -38,6 +40,27 @@ namespace CP22.Windows
                 pwdTextBox.Visibility = Visibility.Collapsed; // TextBox - скрыть
                 pwdPasswordBox.Visibility = Visibility.Visible; // PasswordBox - отобразить
             }
+        }
+        
+        private void loginBT(object sender, RoutedEventArgs e)
+        {
+            if (checkBoxPwd.IsChecked.Value) pwdPasswordBox.Password = pwdTextBox.Text; // скопируем в PasswordBox из TextBox 
+            if (ManegerFrames.LoginInSys(Login.Text, pwdPasswordBox))
+            {
+                Owner.Show();
+                Owner.IsHitTestVisible = true;
+                isLogin = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль");
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!isLogin) { Owner.Close(); }             
         }
     }
 }

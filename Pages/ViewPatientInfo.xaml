@@ -18,7 +18,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Background="LightGray" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Grid.RowSpan="2">
+        <StackPanel x:Name="InfoPerson" Background="LightGray" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Grid.RowSpan="2">
             <Border Background="Gray" Margin="10" HorizontalAlignment="Center">
                 <Image Height="100" Width="100"/>
             </Border>
@@ -103,7 +103,7 @@
         </Border>
         <CheckBox Grid.Column="1" Name="veuiMod" Content="Режим таблицы/списка" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0" Visibility="Visible"/>
 
-        <DataGrid Grid.Column="1" Grid.Row="1" IsReadOnly="True">
+        <DataGrid Name="DGNotes" Grid.Column="1" Grid.Row="1" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

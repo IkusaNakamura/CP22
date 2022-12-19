@@ -20,12 +20,24 @@ namespace CP22.Pages
     /// </summary>
     public partial class ViewPatientInfo : Page
     {
-        private Patients _patients = new Patients();
-        public ViewPatientInfo(Patients selectPatient)
+        private MedCards _medCards = new MedCards();
+      //  private CP22.Patients _patients;
+        PoliclinicaEntities _PoliclinicaEntities = new PoliclinicaEntities();
+        public ViewPatientInfo(MedCards selectMedCard)
         {
             InitializeComponent();
-            if (selectPatient != null) _patients = selectPatient;
-            DataContext = _patients;
+            _medCards = selectMedCard;
+            ///привязка данных к куску с инфой
+          //  _patients = _PoliclinicaEntities.Patients.FirstOrDefault(d => d.MedCards == _medCards.Patients);
+            //_patients = PoliclinicaEntities.GetContext().Patients.FirstOrDefault(x => x.ID ==_medCards.Patient);
+          //  InfoPerson.DataContext = _patients;
+          ///сбор списка для датагрид
+            //var qerye =
+            //    from MedicalHistory in _PoliclinicaEntities.MedicalHistory
+            //    where MedicalHistory.Card == _medCards.ID
+            //    orderby MedicalHistory.Datetime
+            //    select new { MedicalHistory.Datetime, MedicalHistory.Doctor, MedicalHistory.Note};
+           // DGNotes.ItemsSource = 
             try
             {
                 

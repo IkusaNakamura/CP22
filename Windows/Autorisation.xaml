@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CP22.Windows"
         mc:Ignorable="d"
-        Title="Авторизация" Height="300" Width="400">
+        Title="Авторизация" Height="300" Width="400" Closing="Window_Closing">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Вход" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
             <TextBlock Text="Логин" Height="22" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
-            <TextBox Height="24" VerticalAlignment="Top" HorizontalAlignment="Center" Width="172" ></TextBox>
+            <TextBox Name="Login" Height="24" VerticalAlignment="Top" HorizontalAlignment="Center" Width="172" ></TextBox>
             <TextBlock Text="Пароль"  Height="22" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
             
-            <TextBox Name="pwdTextBox" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="170" Height="22" Visibility="Collapsed"/>
+            <TextBox Name="pwdTextBox" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="170" Height="22" Visibility="Collapsed" />
             <PasswordBox Name="pwdPasswordBox" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="170" Height="22"/>
             <CheckBox Name="checkBoxPwd" Content="Показать пароль" HorizontalAlignment="Left" VerticalAlignment="Top" Click="CheckBox_Click"/>
-            <Button Content="Войти"  Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" Width="172"   ></Button>
+            <Button Content="Войти"  Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" Width="172" Click="loginBT"   ></Button>
 
         </StackPanel>
     </Grid>

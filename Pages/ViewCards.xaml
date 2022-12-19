@@ -15,7 +15,6 @@
         </Grid.RowDefinitions>
         <Border Background="#FFCBCBCB">
             <StackPanel Orientation="Horizontal" Margin="10">
-                <Button Content="Смотреть записи" Margin="0,0,10,0" Click="Button_Click"/>
                 <StackPanel Orientation="Horizontal">
                     <Button Width="20" Height="20"/>
                     <TextBox Width="150" Name="searhBox"/>
@@ -30,7 +29,14 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Редактировать" Name="BtEdit"  />
+                            <Button Content="Редактировать" Name="BtEdit" Click="BtEdit_Click"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Подробнее" Name="vueEdit" Click="vueEdit_Click"   />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

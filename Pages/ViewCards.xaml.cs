@@ -26,7 +26,7 @@ namespace CP22.Pages
             
             try
             {
-DGCards.ItemsSource = PoliclinicaEntities.GetContext().MedCards.ToList();
+                DGCards.ItemsSource = PoliclinicaEntities.GetContext().MedCards.ToList();
             }
             catch (Exception e) { MessageBox.Show(e.Message); }
         }
@@ -43,8 +43,11 @@ DGCards.ItemsSource = PoliclinicaEntities.GetContext().MedCards.ToList();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            ManegerFrames.MainFrame.Navigate(new Pages.ViewPatientInfo((sender as Button).DataContext as Patients));
+           
+        }
+        private void BtEdit_Click(object sender, RoutedEventArgs e)//Редактирование
+        {
+            ManegerFrames.MainFrame.Navigate(new PagesForms.MedCard((sender as Button).DataContext as MedCards));
         }
 
         private void delbt_Click(object sender, RoutedEventArgs e)
@@ -64,6 +67,11 @@ DGCards.ItemsSource = PoliclinicaEntities.GetContext().MedCards.ToList();
                     MessageBox.Show(eeee.Message);
                 }
             }
+        }
+
+        private void vueEdit_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerFrames.MainFrame.Navigate(new Pages.ViewPatientInfo((sender as Button).DataContext as MedCards));
         }
     }
 }

@@ -19,12 +19,30 @@ namespace CP22.Windows
     /// </summary>
     public partial class MainWindows : Window
     {
+
+        Autorisation autorisation = new Autorisation();
+        
         public MainWindows()
         {
             InitializeComponent();
+            
             ManegerFrames.MainFrame = frame;
             frame.Navigate(new Pages.StartPage());
+            if (ManegerFrames.Check_Login())
+            {
+                UserName.Text = ManegerFrames.NameUserReturn(); 
+            }
+            else
+            {
+                UserName.Text = "";
+                autorisation.Show();
+                this.Show();
+                autorisation.Owner = this;
+                this.IsHitTestVisible = false;
+                
+            }
         }
+
 
         private void Click_MainToInViewCards(object sender, RoutedEventArgs e)
         {
@@ -75,6 +93,11 @@ namespace CP22.Windows
         private void institutionViwe_Click(object sender, RoutedEventArgs e)
         {
             ManegerFrames.MainFrame.Navigate(new Pages.ViewInstinut());
+        }
+
+        private void Window_Initialized(object sender, EventArgs e)
+        {
+
         }
     }
 }
