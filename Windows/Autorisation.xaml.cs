@@ -50,17 +50,26 @@ namespace CP22.Windows
                 Owner.Show();
                 Owner.IsHitTestVisible = true;
                 isLogin = true;
-                Close();
+                Hide();
+                pwdPasswordBox.Password = null;
+                pwdTextBox.Text = null;
+                Login.Text = null;
             }
             else
             {
-                MessageBox.Show("Неверный логин или пароль");
+                isLogin = false;
+                MessageBox.Show("Неверный логин или пароль","Ошибка входа");
             }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (!isLogin) { Owner.Close(); }             
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            isLogin = false;
         }
     }
 }

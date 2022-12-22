@@ -16,7 +16,7 @@
         <Border Background="#FFCBCBCB">
             <StackPanel Orientation="Horizontal" Margin="10">
                 <StackPanel Orientation="Horizontal">
-                    <Button Width="20" Height="20"/>
+                    <Button Width="20" Height="20" Name="SearchBT" Click="SearchBT_Click"/>
                     <TextBox Width="150" Name="searhBox"/>
                 </StackPanel>
                 <Button Name="addCard" Content="Создать карту" Margin="10,0,10,0" Visibility="Visible" Click="addCard_Click"/>

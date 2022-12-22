@@ -71,7 +71,12 @@ namespace CP22.Pages
 
         private void vueEdit_Click(object sender, RoutedEventArgs e)
         {
-            ManegerFrames.MainFrame.Navigate(new Pages.ViewPatientInfo((sender as Button).DataContext as MedCards));
+            ManegerFrames.MainFrame.Navigate(new ViewPatientInfo((sender as Button).DataContext as MedCards));
+        }
+
+        private void SearchBT_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

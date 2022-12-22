@@ -15,11 +15,21 @@ namespace CP22
         public static Windows.Autorisation Autorisation { get; set; }
 
         private static Users User { get; set; } // блок логина
+        private static Role Role { get; set; }
+        private static void RoleInput()
+        {
+            Role = PoliclinicaEntities.GetContext().Role.FirstOrDefault(s => s.ID == User.Role);
+        }
+
+        private static void RoleOutlog() { Role = null; }
         private static void LoginUser(Users users)
         {
             User = users;
+            RoleInput();
+            AccessLevel = Role_level();
         }
-        public static void LogoutUser() { User = null; }
+        public static bool[] AccessLevel = new bool[3]; //bufer
+        public static void LogoutUser() { User = null; Role = null; }
         public static bool Check_Login()
         {
             if (User == null)
@@ -32,10 +42,40 @@ namespace CP22
                 return true;
             }
         }
+        public static bool[] Role_level()
+        {
+            bool[] result = new bool[3];
+                result[0] = false; // AdminAccess
+                result[1] = false; // Operator
+                result[2] = false; // Doctor
+            if (Role == null) {
+                return result; }
+            else 
+            {
+                if (Role.AdminAccess == true) 
+                {
+                    result[0] = true;
+                }
+                if (Role.OperatorAccess== true)
+                {
+                    result[1] = true;
+                }
+                if (Role.DoctorAccess== true)
+                {
+                    result[2] = true;
+                }
+
+                return result;
+            }
+        }
         public static string NameUserReturn()
         {
-            string name = User.FName + User.LName;
-            return name;
+            if (Check_Login()) 
+            {
+                string name = User.FName.ToString() +" " + User.LName.ToString();
+                return name;
+            }
+            return null;
         }
         public static bool LoginInSys(string login, PasswordBox password)
         {

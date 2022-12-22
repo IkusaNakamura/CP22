@@ -24,5 +24,15 @@ namespace CP22.Pages
         {
             InitializeComponent();
         }
+
+        private void StackPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            StackPan.Visibility= Visibility.Visible;
+        }
+
+        private void StackPanel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            StackPan.Visibility= Visibility.Hidden;
+        }
     }
 }

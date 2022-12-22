@@ -94,7 +94,7 @@
             <StackPanel Orientation="Horizontal" Margin="10">
                 
                 <StackPanel Orientation="Horizontal">
-                    <Button Width="20" Height="20"/>
+                    <Button Width="20" Height="20" Name="SearchBT" Click="SearchBT_Click"/>
                     <TextBox Width="150" Name="searhBox"/>
                 </StackPanel>
                 <Button Name="addNote" Content="Создать запись" Margin="10,0,10,0" Visibility="Visible"/>

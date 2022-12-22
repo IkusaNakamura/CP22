@@ -64,5 +64,10 @@ namespace CP22.Pages
                 }
             } 
         }
+
+        private void SearchBT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

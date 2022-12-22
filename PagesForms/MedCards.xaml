@@ -20,9 +20,9 @@
                             <TextBlock Text="Учреждение" HorizontalAlignment="Right" Margin="0,0,0,5" Height="22"/>
                         </StackPanel>
                         <StackPanel Margin="10,0,0,0">
-                            <ComboBox Name="PatientBox" Width="125" Margin="0,0,0,5" Height="22"/>
-                            <ComboBox Name="CardBox" Width="125" Margin="0,0,0,5" Height="22"/>
-                            <ComboBox Name="InstBox" Width="125" Margin="0,0,0,5" Height="22"/>
+                            <ComboBox Name="PatientBox" Width="125" Margin="0,0,0,5" DisplayMemberPath="LName" Height="22"/>
+                            <ComboBox Name="CardBox" Width="125" Margin="0,0,0,5" DisplayMemberPath="Name" Height="22"/>
+                            <ComboBox Name="InstBox" Width="125" Margin="0,0,0,5" DisplayMemberPath="Name" Height="22"/>
                         </StackPanel>
 
                     </StackPanel>

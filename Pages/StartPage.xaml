@@ -9,6 +9,9 @@
       Title="StartPage">
 
     <Grid>
-        
+        <StackPanel x:Name="StackPan" Visibility="Hidden" MouseMove="StackPanel_MouseMove" MouseLeave="StackPanel_MouseLeave">
+        <Label Content="Пустая страница" FontSize="70"/>
+            <Label Content="Уходи."/>
+        </StackPanel>
     </Grid>
 </Page>

@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -35,8 +36,8 @@ namespace CP22.Windows
             else
             {
                 UserName.Text = "";
-                autorisation.Show();
                 this.Show();
+                autorisation.Show();
                 autorisation.Owner = this;
                 this.IsHitTestVisible = false;
                 
@@ -95,9 +96,51 @@ namespace CP22.Windows
             ManegerFrames.MainFrame.Navigate(new Pages.ViewInstinut());
         }
 
-        private void Window_Initialized(object sender, EventArgs e)
+        private void Window_Activated(object sender, EventArgs e)
         {
+            UserName.Text = ManegerFrames.NameUserReturn();
 
+            startpage.Visibility = Visibility.Collapsed;
+            roleViwe.Visibility = Visibility.Collapsed;
+            usersViwe.Visibility = Visibility.Collapsed;
+            typscardViwe.Visibility = Visibility.Collapsed;
+            institutionViwe.Visibility = Visibility.Collapsed;
+            patientsCards.Visibility = Visibility.Collapsed;
+            patients.Visibility = Visibility.Collapsed;
+            policyorg.Visibility = Visibility.Collapsed;
+
+            if (ManegerFrames.AccessLevel[0] == true)
+            {
+                startpage.Visibility = Visibility.Visible;
+                roleViwe.Visibility = Visibility.Visible;
+                usersViwe.Visibility = Visibility.Visible;
+                typscardViwe.Visibility = Visibility.Visible;
+                institutionViwe.Visibility = Visibility.Visible;
+                patientsCards.Visibility = Visibility.Visible;
+                patients.Visibility = Visibility.Visible;
+                policyorg.Visibility = Visibility.Visible;
+            }
+            if (ManegerFrames.AccessLevel[1] == true)
+            {
+                typscardViwe.Visibility = Visibility.Visible;
+                institutionViwe.Visibility = Visibility.Visible;
+                patientsCards.Visibility = Visibility.Visible;
+                patients.Visibility = Visibility.Visible;
+                policyorg.Visibility = Visibility.Visible;
+            }
+            if (ManegerFrames.AccessLevel[2] == true)
+            {
+                patientsCards.Visibility = Visibility.Visible;
+                patients.Visibility = Visibility.Visible;
+            }
+
+        }
+
+        private void OutlogBT(object sender, RoutedEventArgs e)
+        {
+            ManegerFrames.LogoutUser();
+            autorisation.Show();
+            IsHitTestVisible = false;
         }
     }
 }

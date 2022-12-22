@@ -17,8 +17,8 @@
             <Border Background="#FFCBCBCB">
                 <StackPanel Orientation="Horizontal" Margin="10">
                 <StackPanel Orientation="Horizontal">
-                        <Button Width="20" Height="20"/>
-                        <TextBox Width="150" Name="searhBox"/>
+                    <Button Width="20" Height="20" Name="SearchBT" Click="SearchBT_Click"/>
+                    <TextBox Width="150" Name="searhBox"/>
                     </StackPanel>
                     <Button Name="addRole" Content="Создать роль" Margin="10,0,10,0" Visibility="Visible" Click="addRole_Click"/>
                     <Button Name="delbt" Content="Удалить" Margin="0,0,10,0" Visibility="Visible" Click="delbt_Click"/>

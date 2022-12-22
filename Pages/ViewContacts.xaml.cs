@@ -34,5 +34,10 @@ namespace CP22.Pages
             PoliclinicaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
            // DGPatients.ItemsSource = PoliclinicaEntities.GetContext().Patients.ToList();
         }
+
+        private void SearchBT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
